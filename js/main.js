@@ -62,6 +62,9 @@ btn.addEventListener("click", function() {
         }
 
     }
+    if (countOne === 33) {
+        navigator.vibrate([200, 100, 200])
+    }
 
     count100++
     UserCount.innerHTML = `${count100}`
