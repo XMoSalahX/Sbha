@@ -112,10 +112,7 @@ caches
             updatePage(data);
         }
     })
-    .catch(function() {
-        // we didn't get cached data, the network is our last hope:
-        return networkUpdate;
-    })
+
 
 
 
