@@ -100,16 +100,6 @@ reset.addEventListener("click", function() {
     count100 = 0
 })
 
-
-
-
-
-
-
-
-
-
-
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register('../../Sbha/sw.js')
         .then(function() {
