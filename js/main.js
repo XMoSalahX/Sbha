@@ -88,7 +88,7 @@ reset.addEventListener("click", function() {
     navigator.vibrate([500, 100, 500, 100, 500, 100, 500])
     window.localStorage.removeItem("Counters")
     UserCount.innerHTML = "0"
-    digit.innerHTML = "السمبحة الالكترونية"
+    digit.innerHTML = "المسبحة الالكترونية"
     countOne = 0
     countTwo = 1
     count100 = 0
