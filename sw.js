@@ -38,53 +38,26 @@ self.addEventListener("activate", function(e) {
 
 self.addEventListener('fetch', function(event) {
     event.respondWith(
-        caches.open(cacheName).then(function(cache) {
-            return cache.match(event.request).then(function(response) {
-                return (
-                    response ||
-                    fetch(event.request).then(function(response) {
-                        cache.put(event.request, response.clone());
-                        return response;
-                    })
-                );
-            });
-        }),
+        // Try the network
+        fetch(event.request)
+        .then(function(res) {
+            return caches.open(cacheName)
+                .then(function(cache) {
+                    // Put in cache if succeeds
+                    cache.put(event.request.url, res.clone());
+                    return res;
+                })
+        })
+        .catch(function(err) {
+            // Fallback to cache
+            return caches.match(event.request)
+                .then(function(res) {
+                    if (res === undefined) {
+                        // get and return the offline page
+                        return caches.match(cacheName)
+                    }
+                    return res;
+                })
+        })
     );
 });
-
-
-// self.addEventListener('fetch', function(event) {
-//     event.respondWith(
-//         caches.match(event.request).then(function(response) {
-//             return fetch(event.request).then(function() {
-//                 return fetch(event.request)
-//             }).catch(function() {
-//                 return response
-//             })
-//         }),
-//     );
-// });
-// var x = 0
-
-// self.addEventListener('fetch', (e) => {
-//     e.respondWith((async() => {
-//         if (x === 0) {
-//             const r = await caches.match(e.request);
-//             console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
-//             if (r) {
-//                 x++
-//                 return r;
-//             }
-//         }
-//         const m = await caches.match(e.request);
-//         const response = await fetch(e.request);
-//         const cache = await caches.open(cacheName)
-
-//         console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
-//         cache.put(e.request, response.clone());
-
-//         return response || m;
-
-
-//     })());
-// });
