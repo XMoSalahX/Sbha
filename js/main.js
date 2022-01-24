@@ -50,7 +50,7 @@ if (window.localStorage.getItem("Counters")) {
 }
 
 btn.addEventListener("click", function() {
-    navigator.vibrate(500)
+    navigator.vibrate(100)
     countOne++
     count100++
     UserCount.innerHTML = `${count100}`
