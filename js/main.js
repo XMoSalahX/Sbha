@@ -97,17 +97,7 @@ reset.addEventListener("click", function() {
 
 var networkDataReceived = false;
 
-startSpinner();
 
-// fetch fresh data
-var networkUpdate = fetch('https://xmosalahx.github.io/Sbha/')
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        networkDataReceived = true;
-        updatePage(data);
-    });
 
 // fetch cached data
 caches
@@ -126,8 +116,7 @@ caches
         // we didn't get cached data, the network is our last hope:
         return networkUpdate;
     })
-    .catch(showErrorMessage)
-    .then(stopSpinner);
+
 
 
 if ("serviceWorker" in navigator) {
