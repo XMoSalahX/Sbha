@@ -99,19 +99,7 @@ var networkDataReceived = false;
 
 
 
-// fetch cached data
-caches
-    .match('sbhaCache')
-    .then(function(response) {
-        if (!response) throw Error('No data');
-        return response.json();
-    })
-    .then(function(data) {
-        // don't overwrite newer network data
-        if (!networkDataReceived) {
-            updatePage(data);
-        }
-    })
+
 
 
 
