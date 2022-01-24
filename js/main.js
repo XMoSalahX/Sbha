@@ -55,7 +55,7 @@ if (window.localStorage.getItem("Counters")) {
 btn.addEventListener("click", function() {
     countOne++
     if (checkbox.checked) {
-        if (countOne === 1) {
+        if (countOne === 33) {
             navigator.vibrate([200, 100, 200])
         } else {
             navigator.vibrate(100)
