@@ -1,0 +1,278 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Almarai', sans-serif;
+        direction: rtl;
+    }
+    
+    .con {
+        overflow: hidden;
+    }
+    
+    nav {
+        background-color: rgb(40, 17, 102);
+        height: 80px;
+        display: flex;
+        align-items: center;
+        padding-inline: 20px;
+        justify-content: space-between;
+        box-shadow: gray 0px 10px 50px 10px;
+    }
+    
+    .title {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .iconContainer {
+        width: auto;
+        direction: ltr;
+    }
+    
+    .iconContainer div {
+        height: 4px;
+        width: 30px;
+        background-color: white;
+        margin-bottom: 5px;
+        transition: .5s;
+        -webkit-transition: .5s;
+        -moz-transition: .5s;
+        -ms-transition: .5s;
+        -o-transition: .5s;
+        direction: ltr;
+    }
+    
+    .iconContainer div:last-child {
+        margin-bottom: 0;
+        transition: 1s;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+    }
+    
+    .iconContainer div.lineTwo {
+        margin-left: 10px;
+    }
+    
+    .iconContainer div.lineThree {
+        margin-left: 20px;
+    }
+    
+    .iconContainer div.Line1 {
+        margin-left: 0;
+    }
+    
+    .iconContainer div.Line2 {
+        margin-left: 0;
+    }
+    
+    ul {
+        margin-top: 05px;
+        background-color: #563fd6;
+        color: white;
+        padding-block: 10px;
+        list-style: none;
+        position: relative;
+        height: auto;
+        left: -100%;
+        display: none;
+        z-index: 3;
+    }
+    
+    .Contact {
+        font-size: 20px;
+        margin-bottom: 25px;
+        font-weight: 600;
+        padding-bottom: 10px;
+        color: yellow;
+        border-bottom: 1px dotted;
+        text-align: center;
+    }
+    
+    ul li:not(:first-child) {
+        padding-right: 20px;
+        padding-block: 10px;
+        transition: 1s;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+    }
+    
+    ul li:not(:first-child):hover {
+        background-color: tomato;
+        padding-right: 30px;
+    }
+    
+    .move {
+        display: block;
+        animation-name: links;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes links {
+        0% {
+            display: block;
+            height: 60px;
+        }
+        50% {
+            left: 0;
+            height: 60px;
+            ;
+        }
+        100% {
+            left: 0;
+            height: 200px;
+        }
+    }
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    main {
+        height: calc(100vh - 140px);
+        display: grid;
+        place-items: center;
+        position: relative;
+    }
+    
+    .path {
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+    
+    .path img {
+        width: 95%;
+    }
+    
+    .cont-digt {
+        width: 70%;
+        height: 30%;
+        background-color: tomato;
+        position: absolute;
+        top: 15%;
+        right: 50%;
+        transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        -o-transform: translateX(50%);
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        display: grid;
+        place-items: center;
+    }
+    
+    .digit {
+        width: 85%;
+        height: 75%;
+        background-color: rgba(128, 128, 128, 0.712);
+        border: 3px solid rgb(40, 17, 102);
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        display: grid;
+        place-items: center;
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .main-btn {
+        width: 35%;
+        height: 30%;
+        background-color: tomato;
+        position: absolute;
+        bottom: 10%;
+        right: 50%;
+        transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        -o-transform: translateX(50%);
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        display: grid;
+        place-items: center;
+    }
+    
+    .btn {
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border: 3px solid rgb(40, 17, 102);
+        background-color: rgb(65, 36, 145);
+    }
+    
+    .btn:hover {
+        background-color: rgb(78, 53, 146);
+        border-color: white;
+    }
+    
+    .reset {
+        width: 11%;
+        height: 10%;
+        position: absolute;
+        background-color: tomato;
+        bottom: 38%;
+        right: 23%;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    
+    .reset:hover {
+        border: 3px white solid;
+    }
+    
+    main .qu {
+        padding-inline: 20px;
+    }
+    
+    main .qu div:first-child {
+        line-height: 1.5;
+        margin-bottom: 5px;
+    }
+    
+    main .qu span {
+        font-weight: bold;
+        color: tomato;
+    }
+    
+    .hundred {
+        margin-top: 5px;
+        font-weight: bold;
+    }
+    
+    footer {
+        height: 60px;
+        width: 100%;
+        background-color: rgb(40, 17, 102);
+        color: white;
+        display: grid;
+        place-items: center;
+        direction: ltr;
+        position: absolute;
+        bottom: 0;
+    }
