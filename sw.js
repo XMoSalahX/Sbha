@@ -38,11 +38,8 @@ self.addEventListener("activate", function(e) {
 
 self.addEventListener('fetch', function(event) {
     event.respondWith(
-        caches.open(cacheName).then(function(cache) {
-            return fetch(event.request).then(function(response) {
-                cache.put(event.request, response.clone());
-                return response;
-            });
+        fetch(event.request).catch(function() {
+            return caches.match(event.request);
         }),
     );
 });
