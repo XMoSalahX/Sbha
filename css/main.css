@@ -252,7 +252,7 @@
     
     main .qu div:first-child {
         line-height: 1.5;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
     
     main .qu span {
@@ -261,8 +261,18 @@
     }
     
     .hundred {
-        margin-top: 5px;
+        margin-top: 15px;
         font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .vib {
+        margin-left: 5px;
+    }
+    
+    input {
+        accent-color: tomato;
     }
     
     footer {

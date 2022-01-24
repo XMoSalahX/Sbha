@@ -8,6 +8,7 @@ const btn = document.querySelector(".btn")
 const digit = document.querySelector(".digit")
 const UserCount = document.querySelector(".UserCount")
 const reset = document.querySelector(".reset")
+const checkbox = document.querySelector("input")
 
 iconContainer.addEventListener("click", function() {
     lineTwo.classList.toggle("lineTwo")
@@ -50,7 +51,9 @@ if (window.localStorage.getItem("Counters")) {
 }
 
 btn.addEventListener("click", function() {
-    navigator.vibrate(100)
+    if (checkbox.checked) {
+        navigator.vibrate(100)
+    }
     countOne++
     count100++
     UserCount.innerHTML = `${count100}`
@@ -85,6 +88,9 @@ btn.addEventListener("click", function() {
 })
 
 reset.addEventListener("click", function() {
+    if (checkbox.checked) {
+        navigator.vibrate([500, 100, 500, 100, 500, 100, 500])
+    }
     navigator.vibrate([500, 100, 500, 100, 500, 100, 500])
     window.localStorage.removeItem("Counters")
     UserCount.innerHTML = "0"
@@ -95,7 +101,7 @@ reset.addEventListener("click", function() {
 })
 
 
-var networkDataReceived = false;
+
 
 
 
