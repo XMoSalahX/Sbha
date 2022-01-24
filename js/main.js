@@ -10,6 +10,8 @@ const UserCount = document.querySelector(".UserCount")
 const reset = document.querySelector(".reset")
 const checkbox = document.querySelector("input")
 
+
+
 iconContainer.addEventListener("click", function() {
     lineTwo.classList.toggle("lineTwo")
     lineThree.classList.toggle("lineThree")
@@ -51,10 +53,16 @@ if (window.localStorage.getItem("Counters")) {
 }
 
 btn.addEventListener("click", function() {
-    if (checkbox.checked) {
-        navigator.vibrate(100)
-    }
     countOne++
+    if (checkbox.checked) {
+        if (countOne === 1) {
+            navigator.vibrate([200, 100, 200])
+        } else {
+            navigator.vibrate(100)
+        }
+
+    }
+
     count100++
     UserCount.innerHTML = `${count100}`
     if (count100 >= 100) {
@@ -77,6 +85,7 @@ btn.addEventListener("click", function() {
     } else if (countTwo === 3) {
         digit.innerHTML = "الله اكبر"
     } else {
+        navigator.vibrate(1000)
         countTwo = 1
         digit.style.fontSize = "14px"
         digit.innerHTML = "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ "
@@ -88,9 +97,7 @@ btn.addEventListener("click", function() {
 })
 
 reset.addEventListener("click", function() {
-    if (checkbox.checked) {
-        navigator.vibrate([500, 100, 500, 100, 500, 100, 500])
-    }
+
     navigator.vibrate([500, 100, 500, 100, 500, 100, 500])
     window.localStorage.removeItem("Counters")
     UserCount.innerHTML = "0"
