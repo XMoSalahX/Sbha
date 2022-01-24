@@ -36,18 +36,29 @@ self.addEventListener("activate", function(e) {
     )
 })
 
-
 self.addEventListener('fetch', function(event) {
     event.respondWith(
-        caches.match(event.request).then(function(response) {
-            return fetch(event.request).then(function() {
-                return fetch(event.request)
-            }).catch(function() {
-                return response
-            })
+        caches.open('mysite-dynamic').then(function(cache) {
+            return fetch(event.request).then(function(response) {
+                cache.put(event.request, response.clone());
+                return (response) ? response : cache
+            });
         }),
     );
 });
+
+
+// self.addEventListener('fetch', function(event) {
+//     event.respondWith(
+//         caches.match(event.request).then(function(response) {
+//             return fetch(event.request).then(function() {
+//                 return fetch(event.request)
+//             }).catch(function() {
+//                 return response
+//             })
+//         }),
+//     );
+// });
 // var x = 0
 
 // self.addEventListener('fetch', (e) => {
