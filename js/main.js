@@ -93,3 +93,12 @@ reset.addEventListener("click", function() {
     countTwo = 1
     count100 = 0
 })
+
+
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register('../../Sbha/sw.js')
+        .then(function() {
+            console.log('Service Worker Registered');
+        })
+}

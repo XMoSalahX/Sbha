@@ -1,0 +1,54 @@
+{
+    "name": "السبحة",
+    "short_name": "السبحة",
+    "start_url": "/Sbha/index.html",
+    "icons": [{
+        "src": "images/img48.png",
+        "sizes": "48x48",
+        "type": "image/png"
+    }, {
+        "src": "images/img96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+    }, {
+        "src": "images/img128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+    }, {
+        "src": "images/img144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+
+    }, {
+        "src": "images/img152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+    }, {
+        "src": "images/img192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+
+    }, {
+        "src": "images/img256png.png",
+        "sizes": "256x256",
+        "type": "image/png"
+    }, {
+        "src": "images/img384.png",
+        "sizes": "384x384",
+        "type": "image/png"
+    }, {
+        "src": "images/img512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+
+    }, {
+        "src": "images/67dcd977-8c51-4a9f-b323-3ee62f74a57b.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+    }],
+    "background_color": "#3E4EB8",
+    "theme_color": "#2F3BA2",
+    "display": "standalone",
+    "orientation": "portrait"
+}
