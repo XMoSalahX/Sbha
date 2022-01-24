@@ -74,6 +74,7 @@ btn.addEventListener("click", function() {
             countOne = 0
         } else {
             countOne = 1
+            navigator.vibrate([200, 100, 200])
         }
 
     }
