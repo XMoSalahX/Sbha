@@ -10,7 +10,7 @@ const UserCount = document.querySelector(".UserCount")
 const reset = document.querySelector(".reset")
 const checkbox = document.querySelector("input")
 
-
+fetch("https://us-central1-sbha-a75e4.cloudfunctions.net/app/ubdate/1")
 
 iconContainer.addEventListener("click", function() {
     lineTwo.classList.toggle("lineTwo")
