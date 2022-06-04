@@ -49,3 +49,9 @@
 └── sw.js # Service worker file responsible for storing the project file and determining which technique the application will use when it starts running.
 
 ````
+
+## Electronic rosary application
+You can use the rosary through this link: [Click Here](https://xmosalahx.github.io/Sbha/)
+
+## App Dependencies
+Firebase `v10.7.2`
